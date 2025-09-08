@@ -100,7 +100,7 @@ App will be running on http://localhost:5173
 🌍 Deployment
 
 The app is deployed on Vercel:
-👉 Live Demo  
+👉 Live Demo https://nexusbysami.netlify.app/ 
 
 
 👨‍💻 Authors

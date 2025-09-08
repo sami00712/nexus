@@ -1,23 +1,15 @@
-import React from "react";
 import { Navigate } from "react-router-dom";
 
-interface RequireAuthProps {
-  role: "investor" | "entrepreneur";
-  children: React.ReactNode;
-}
+export const RequireAuth = ({ children, role }) => {
+  const user = JSON.parse(localStorage.getItem("user") || "{}");
 
-const RequireAuth: React.FC<RequireAuthProps> = ({ role, children }) => {
-  const userRole = localStorage.getItem("userRole");
-
-  if (!userRole) {
+  if (!user.isAuthenticated) {
     return <Navigate to="/login" replace />;
   }
 
-  if (userRole !== role) {
-    return <Navigate to="/" replace />;
+  if (role && user.role !== role) {
+    return <Navigate to="/login" replace />;
   }
 
-  return <>{children}</>;
+  return children;
 };
-
-export default RequireAuth;

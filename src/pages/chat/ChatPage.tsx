@@ -14,7 +14,7 @@ import {
   sendMessage,
   getConversationsForUser,
 } from "../../data/messages";
-import VideoCall from "../../components/call/VideoCall";
+// import VideoCall from "../../components/call/VideoCall";
 
 export const ChatPage: React.FC = () => {
   const { userId } = useParams<{ userId: string }>();
